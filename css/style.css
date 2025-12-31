@@ -138,9 +138,9 @@ ul {
 /* ============================================
    Header (Legacy - kept for compatibility)
    ============================================ */
-.site-header {
+/* .site-header {
   display: none;
-}
+} */
 
 /* ============================================
    Hero Section
@@ -149,19 +149,72 @@ ul {
   width: 100%;
   margin-bottom: var(--spacing-xl);
   position: relative;
+  /* Ensure header and other elements stack correctly */
 }
 
+/* Slideshow Container */
 .hero-media {
   position: relative;
   width: 100%;
+  height: 100vh;
+  /* Full viewport height for impact */
+  max-height: 800px;
+  /* Optional cap */
+  min-height: 500px;
   overflow: hidden;
+  background-color: #000;
+  /* Fallback */
 }
 
-.hero-media img {
+.hero-slides {
+  position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 0;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Progress Line (Vertical on Right) */
+.hero-progress-line {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  /* Adjust based on container padding or visual reference */
+  width: 1px;
+  height: 120px;
+  /* Fixed height matching visual reference */
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 20;
+}
+
+.hero-progress-line .progress-bar {
+  display: block;
+  width: 100%;
+  height: 0%;
+  background-color: #FFFFFF;
+  transition: height 3s linear;
 }
 
 /* Hero Header/Navbar */
@@ -172,8 +225,72 @@ ul {
   right: 0;
   z-index: 100;
   padding: var(--spacing-lg) 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  transition: background-color 0.3s, padding 0.3s, box-shadow 0.3s;
+}
 
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bg-white);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Sticky Header State */
+.site-header.scrolled {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-xs) 0;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.site-header.scrolled .hero-nav a,
+.site-header.scrolled .hero-action-link,
+.site-header.scrolled .hero-icon {
+  color: var(--text-dark);
+}
+
+.site-header.scrolled .icon-white {
+  display: none !important;
+}
+
+.site-header.scrolled .icon-black {
+  display: block !important;
+}
+
+.site-header.scrolled .hero-logo {
+  filter: invert(1) brightness(0.2);
+  /* Make logo dark if it's white */
+}
+
+/* Adjust hamburger for scrolled state */
+.site-header.scrolled .mobile-menu-toggle span {
+  background-color: var(--text-dark);
 }
 
 .hero-header-inner {
@@ -205,10 +322,29 @@ ul {
   color: var(--bg-white);
   transition: opacity 0.2s;
   white-space: nowrap;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.hero-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .hero-nav a:hover {
-  opacity: 0.8;
+  opacity: 1;
+}
+
+.hero-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .hero-actions {
@@ -239,6 +375,20 @@ ul {
   flex-shrink: 0;
 }
 
+.icon-black {
+  display: none !important;
+}
+
+.icon-white {
+  display: block;
+}
+
+.hero-action-link img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -249,58 +399,94 @@ ul {
   background: transparent;
   border: none;
   cursor: pointer;
+  z-index: 200;
+  /* Ensure above overlay */
 }
 
-.mobile-menu-toggle span {
-  width: 100%;
-  height: 2px;
-  background-color: var(--bg-white);
-  transition: all 0.3s;
-}
+/* ... existing styles ... */
 
-/* Left Overlay Text Block */
 .hero-overlay-left {
   position: absolute;
-  bottom: 10%;
-  left: 3%;
-  max-width: 500px;
-  color: var(--bg-white);
+  bottom: 5%;
+  left: 30px;
   z-index: 10;
-}
-
-.hero-title {
-  font-size: var(--font-size-xxl);
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
-  line-height: 1.3;
+  max-width: 600px;
   color: var(--bg-white);
+  text-align: left;
 }
 
 .hero-description {
-  font-size: var(--font-size-sm);
-  margin-bottom: var(--spacing-sm);
-  line-height: 1.6;
-  color: var(--bg-white);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-sm);
-  margin-bottom: var(--spacing-md);
-  color: var(--bg-white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .hero-cta {
   display: inline-block;
   color: var(--bg-white);
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  text-decoration: underline;
-  transition: opacity 0.2s;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 12px;
+  letter-spacing: 0.05em;
+  transition: opacity 0.3s;
 }
 
 .hero-cta:hover {
   opacity: 0.8;
 }
+
+.cta-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 1px;
+  background-color: var(--bg-white);
+  transition: width 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.cta-arrow {
+  position: absolute;
+  bottom: -3px;
+  left: 20px;
+  /* Start position */
+  width: 12px;
+  height: auto;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  pointer-events: none;
+}
+
+.hero-cta:hover .cta-line {
+  width: 260px;
+}
+
+.hero-cta:hover .cta-arrow {
+  opacity: 1;
+  left: 254px;
+  /* Move to end of expanded line */
+}
+
+.hero-cta .arrow {
+  display: none;
+  /* Hide the img arrow as we use CSS */
+}
+
+.hero-cta:hover {
+  opacity: 0.8;
+}
+
 
 /* Right Coupon Badge */
 .hero-badge {
@@ -332,7 +518,8 @@ ul {
   }
 
   .hero-overlay-left {
-    left: 5%;
+    left: 20px;
+    bottom: 10%;
     max-width: 400px;
   }
 
@@ -379,11 +566,64 @@ ul {
   }
 
   .hero-overlay-left {
-    position: static;
-    padding: var(--spacing-lg);
-    background-color: rgba(0, 0, 0, 0.7);
-    max-width: 100%;
-    margin-top: var(--spacing-lg);
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    right: 20px;
+    top: auto;
+    transform: none;
+    padding: 0;
+    background-color: transparent;
+    max-width: calc(100% - 40px);
+    margin-top: 0;
+  }
+
+  .hero-description {
+    font-size: 0.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-cta {
+    font-size: 0.75rem;
+  }
+
+  .cta-line {
+    width: 150px;
+  }
+
+  .hero-cta:hover .cta-line {
+    width: 180px;
+  }
+
+  .hero-cta:hover .cta-arrow {
+    left: 174px;
+  }
+
+  /* Center black logo on mobile scrolled state */
+  .site-header.scrolled .hero-header-inner {
+    justify-content: center;
+    position: relative;
+  }
+
+  .site-header.scrolled .mobile-menu-toggle {
+    position: absolute;
+    left: 20px;
+  }
+
+  .site-header.scrolled .hero-actions {
+    display: flex;
+    /* Show icons in mobile sticky bar */
+    position: absolute;
+    right: 20px;
+  }
+
+  .site-header.scrolled .hero-logo {
+    filter: invert(1) brightness(0.2);
+    /* Make MainLOGO.png black on mobile scrolled state */
   }
 
   .hero-title {
@@ -403,6 +643,303 @@ ul {
   .hero-badge img {
     max-width: 150px;
   }
+}
+
+/* Detailed Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #F0EDE9;
+  /* Beige background to match design */
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Header inside Overlay */
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Center the logo */
+  padding: 15px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #E5E5E5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  left: 20px;
+  background: none;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mobile-menu-header-actions {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.mobile-menu-close::before,
+.mobile-menu-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+}
+
+.mobile-menu-close::before {
+  transform: rotate(45deg);
+}
+
+.mobile-menu-close::after {
+  transform: rotate(-45deg);
+}
+
+.close-info {
+  display: none;
+  /* Hide text, just X */
+}
+
+.mobile-menu-logo img {
+  height: 40px;
+  width: auto;
+  filter: invert(1) brightness(0.2);
+  /* Ensure MainLOGO.png is black in menu overlay */
+}
+
+.mobile-menu-header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.mobile-header-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.mobile-header-action img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.mobile-header-action .icon-white {
+  display: none !important;
+}
+
+.mobile-header-action .icon-black {
+  display: block !important;
+}
+
+.mobile-header-action span {
+  font-size: 8px;
+  font-weight: 700;
+}
+
+/* Red Promo Banner */
+.mobile-promo-banner {
+  background-color: #A62A11;
+  /* Dark red */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.promo-text-small {
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.promo-text-large {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.promo-points {
+  font-size: 20px;
+  margin: 0 4px;
+}
+
+.promo-subtext {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+/* Accordion and Nav */
+.mobile-menu-content {
+  padding: 0;
+}
+
+.mobile-menu-nav {
+  background-color: #F0EDE9;
+}
+
+.mobile-accordion {
+  border-bottom: 1px solid #D1CAC3;
+}
+
+.accordion-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  cursor: pointer;
+  position: relative;
+}
+
+.accordion-header::after {
+  content: '';
+  width: 10px;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%3C333' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+  transition: transform 0.3s;
+}
+
+.mobile-accordion.active .accordion-header::after {
+  transform: rotate(180deg);
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-text .ja {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.header-text .en {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+}
+
+.accordion-content {
+  padding: 0 20px 20px;
+  display: none;
+}
+
+.mobile-accordion.active .accordion-content {
+  display: block;
+}
+
+.sub-link {
+  display: block;
+  padding: 10px 0;
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #D1CAC3;
+}
+
+.sub-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu-item-link {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #D1CAC3;
+}
+
+.mobile-menu-item-link .ja {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.mobile-menu-item-link .en {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Selection Row with Badge */
+.selection-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #D1CAC3;
+}
+
+.selection-row .sub-link {
+  border-bottom: none;
+  flex: 1;
+}
+
+.badge-red {
+  background-color: #A62A11;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+/* Footer Links */
+.mobile-menu-footer {
+  padding: 40px 20px;
+  background-color: #F0EDE9;
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.links-col a {
+  display: block;
+  font-size: 10px;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+/* Banners */
+.mobile-menu-banners {
+  padding: 0 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ============================================
@@ -453,6 +990,11 @@ ul {
   flex: 1;
   overflow: hidden;
   position: relative;
+  cursor: grab;
+}
+
+.campaign-slider-wrapper:active {
+  cursor: grabbing;
 }
 
 .campaign-slider {
@@ -469,6 +1011,11 @@ ul {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 0 4px;
   /* Add small padding for spacing between items */
+  transition: opacity 0.3s ease;
+}
+
+.campaign-item:hover {
+  opacity: 0.5;
 }
 
 .campaign-item img {
@@ -540,6 +1087,12 @@ ul {
   .carousel-tag {
     font-size: var(--font-size-xs);
   }
+
+  .campaign-item {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 0;
+  }
 }
 
 /* ============================================
@@ -573,19 +1126,68 @@ ul {
   display: block;
   width: 100%;
   height: 100%;
-  transition: opacity 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.topic-link:hover {
-  opacity: 0.9;
-}
-
-.topic-left img,
-.topic-right img {
+.topic-link img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.topic-link:hover img {
+  transform: scale(1.03);
+  opacity: 0.5;
+}
+
+/* Arrow Animation inside Topics */
+.topic-arrow-wrapper {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  /* Reduced base width */
+  height: 20px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.topic-line {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 40px;
+  height: 1px;
+  background-color: var(--bg-white);
+  transition: width 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.topic-arrow {
+  position: absolute;
+  bottom: -3px;
+  right: 20px;
+  /* Start position relative to right */
+  width: 12px;
+  height: auto;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  filter: brightness(0) invert(1);
+  /* Ensure it's white if the asset is black */
+}
+
+.topic-link:hover .topic-line {
+  width: 60px;
+}
+
+.topic-link:hover .topic-arrow {
+  opacity: 1;
+  right: 0;
+  /* Move to end of expanded line */
 }
 
 @media (max-width: 767px) {
@@ -624,7 +1226,6 @@ ul {
 }
 
 .product-card:hover {
-  transform: translateY(-2px);
   box-shadow: none;
 }
 
@@ -636,6 +1237,8 @@ ul {
   /* Light beige/gray background for image */
   padding: var(--spacing-md);
   /* Padding around the product image */
+  overflow: hidden;
+  /* Added to contain scale */
 }
 
 .product-img {
@@ -646,6 +1249,7 @@ ul {
   display: block;
   mix-blend-mode: multiply;
   /* Helps blend the image if it has a white bg, though pngs are better */
+  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .new-badge-img {
@@ -671,6 +1275,16 @@ ul {
   margin-bottom: 0.5rem;
   line-height: 1.5;
   color: var(--text-dark);
+  transition: text-decoration 0.3s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.03);
+}
+
+.product-card:hover .product-name {
+  text-decoration: underline;
+  text-decoration-color: #000;
 }
 
 .product-price {
@@ -1050,6 +1664,7 @@ ul {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .column-content {
@@ -1084,6 +1699,16 @@ ul {
   margin-bottom: 0;
   line-height: 1.6;
   color: var(--text-dark);
+  transition: text-decoration 0.3s ease;
+}
+
+.column-card:hover .column-image img {
+  transform: scale(1.03);
+}
+
+.column-card:hover .column-title {
+  text-decoration: underline;
+  text-decoration-color: #000;
 }
 
 .column-excerpt {
@@ -1130,6 +1755,25 @@ ul {
   font-size: var(--font-size-sm);
   line-height: 1.6;
   color: var(--text-dark);
+  position: relative;
+  display: inline-block;
+}
+
+.news-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.news-item:hover .news-text::after {
+  transform: scaleX(1);
 }
 
 @media (max-width: 767px) {
@@ -1212,11 +1856,129 @@ ul {
 
 @media (max-width: 767px) {
   .shoplist-wrapper {
-    height: 300px;
+    height: auto;
+    /* Allow height to grow with image */
   }
 
   .shoplist-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================================
+   Shop List Section Styles
+   ============================================ */
+.shoplist .fluid-container {
+  padding: 0;
+  max-width: 100%;
+}
+
+.shoplist-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.shoplist-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* Required for zoom effect */
+}
+
+.shoplist-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Smooth zoom easing */
+}
+
+/* Hover Effect: Zoom Image */
+.shoplist-link:hover .shoplist-image {
+  transform: scale(1.03);
+}
+
+.shoplist-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.shoplist-title {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Arrow Animation Wrapper */
+.shoplist-arrow-wrapper {
+  position: absolute;
+  bottom: 40px;
+  right: 5%;
+  /* Adjust based on design, e.g. 5% or fixed pixel */
+  width: 60px;
+  /* Initial visual width logic same as others */
+  height: 20px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.shoplist-line {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 40px;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.shoplist-arrow-icon {
+  position: absolute;
+  bottom: -3px;
+  right: 20px;
+  width: 12px;
+  height: auto;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  filter: brightness(0) invert(1);
+  /* Ensure it's white */
+}
+
+/* Hover Effect: Arrow Animation */
+.shoplist-link:hover .shoplist-line {
+  width: 60px;
+}
+
+.shoplist-link:hover .shoplist-arrow-icon {
+  opacity: 1;
+  right: 0;
+  /* Move to end */
+}
+
+@media (max-width: 767px) {
+  .shoplist-title {
     font-size: 1.4rem;
+  }
+
+  .shoplist-arrow-wrapper {
+    bottom: 20px;
+    right: 20px;
   }
 }
 

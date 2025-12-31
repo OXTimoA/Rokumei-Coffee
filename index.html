@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 
 <head>
@@ -25,10 +25,104 @@
     <!-- Hero -->
     <section class="hero" aria-label="Featured">
       <div class="hero-media">
-        <img src="assets/スタジオセッション-5409 1.png" alt="Pouring latte art">
+        <!-- Slideshow Container -->
+        <div class="hero-slides">
+          <!-- Slide 1 -->
+          <div class="hero-slide active">
+            <picture>
+              <source media="(max-width: 767px)" srcset="assets/FV01_SP.png">
+              <img src="assets/FV_01_PC.png" alt="Rokumei Coffee Slide 1">
+            </picture>
+            <div class="hero-overlay-left">
+              <p class="hero-description">コーヒーとパンのある日常</p>
+              <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
+              <p class="hero-subtitle">ロクメイベイクスグランドオープン!</p>
+              <a href="#readmore" class="hero-cta">
+                READ MORE
+                <span class="cta-line"></span>
+                <img src="assets/プロパティ1=バリアント2 (1).png" alt="" class="cta-arrow">
+              </a>
+            </div>
+          </div>
 
-        <!-- Navbar integrated in hero -->
-        <header class="hero-header">
+          <!-- Slide 2 -->
+          <div class="hero-slide">
+            <picture>
+              <source media="(max-width: 767px)" srcset="assets/FV02_SP.png">
+              <img src="assets/FV_02_PC.png" alt="Rokumei Coffee Slide 2">
+            </picture>
+            <div class="hero-overlay-left">
+              <!-- Placeholder text for other slides, assuming same structure or updated content. 
+                    I'll keep the same text structure for now or maybe vary slightly if implicit content isn't provided. 
+                    User just said "different image have different text", so I will duplicate the block. -->
+              <p class="hero-description">コーヒーとパンのある日常</p>
+              <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
+              <p class="hero-subtitle">ロクメイベイクスグランドオープン！</p>
+              <a href="#readmore" class="hero-cta">
+                READ MORE
+                <span class="cta-line"></span>
+                <img src="assets/プロパティ1=バリアント2 (1).png" alt="" class="cta-arrow">
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="hero-slide">
+            <picture>
+              <source media="(max-width: 767px)" srcset="assets/FV03_SP.png">
+              <img src="assets/FV_03_PC.png" alt="Rokumei Coffee Slide 3">
+            </picture>
+            <div class="hero-overlay-left">
+              <p class="hero-description">選び抜かれた、ロクメイセレクション</p>
+              <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
+              <p class="hero-subtitle">ロクメイベイクスグランドオープン！</p>
+              <a href="#readmore" class="hero-cta">
+                READ MORE
+                <span class="cta-line"></span>
+                <img src="assets/プロパティ1=バリアント2 (1).png" alt="" class="cta-arrow">
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="hero-slide">
+            <picture>
+              <source media="(max-width: 767px)" srcset="assets/FV04_SP.png">
+              <img src="assets/FV_04_PC.png" alt="Rokumei Coffee Slide 4">
+            </picture>
+            <div class="hero-overlay-left">
+              <p class="hero-description">日常をロクメイと。</p>
+              <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
+              <p class="hero-subtitle">ロクメイベイクスグランドオープン！</p>
+              <a href="#readmore" class="hero-cta">
+                READ MORE
+                <span class="cta-line"></span>
+                <img src="assets/プロパティ1=バリアント2 (1).png" alt="" class="cta-arrow">
+              </a>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="hero-slide">
+            <picture>
+              <source media="(max-width: 767px)" srcset="assets/FV05_SP.png">
+              <img src="assets/FV_05_PC.png" alt="Rokumei Coffee Slide 5">
+            </picture>
+            <div class="hero-overlay-left">
+              <p class="hero-description">新パッケージになりました！</p>
+              <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
+              <p class="hero-subtitle">ロクメイベイクスグランドオープン！</p>
+              <a href="#readmore" class="hero-cta">
+                READ MORE
+                <span class="cta-line"></span>
+                <img src="assets/プロパティ1=バリアント2 (1).png" alt="" class="cta-arrow">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navbar integrated in hero (Restored to inside hero-media)-->
+        <header class="hero-header site-header">
           <div class="container hero-header-inner">
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
               <span></span>
@@ -37,48 +131,161 @@
             </button>
             <div class="hero-brand">
               <a href="#home"><img src="assets/MainLOGO.png" alt="ROKUMEI COFFEE" class="hero-logo"></a>
-
             </div>
             <nav class="hero-nav" aria-label="Primary">
-              <a href="#shop">商品一覧</a>
-              <a href="#selection">ロクメイセレクション</a>
-              <a href="#about">ロクメイコーヒーについて</a>
-              <a href="#shoplist">店舗一覧</a>
-              <a href="#column">よみもの。</a>
+              <a href="#shop" class="nav-link">商品一覧</a>
+              <a href="#selection" class="nav-link">ロクメイセレクション</a>
+              <a href="#about" class="nav-link">ロクメイコーヒーについて</a>
+              <a href="#shoplist" class="nav-link">店舗一覧</a>
+              <a href="#column" class="nav-link">よみもの。</a>
             </nav>
             <div class="hero-actions">
               <a href="#mypage" class="hero-action-link">
-                <!-- <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-icon">
-                  <path d="M10 10C12.7614 10 15 7.76142 15 5C15 2.23858 12.7614 0 10 0C7.23858 0 5 2.23858 5 5C5 7.76142 7.23858 10 10 10Z" fill="currentColor"/>
-                  <path d="M10 12C5.58172 12 2 13.7909 2 16V20H18V16C18 13.7909 14.4183 12 10 12Z" fill="currentColor"/>
-                </svg> -->
-                <img src="assets/icon.png" alt="My Page">
+                <img src="assets/icon.png" alt="My Page" class="icon-white">
+                <img src="assets/black MYPAGE.png" alt="My Page" class="icon-black">
                 <span>MYPAGE</span>
               </a>
               <a href="#cart" class="hero-action-link">
-                <!-- <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-icon">
-                  <path d="M5 7H15L14 13H6L5 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="7" cy="17" r="1" fill="currentColor"/>
-                  <circle cx="13" cy="17" r="1" fill="currentColor"/>
-                </svg> -->
-                <img src="assets/icon (1).svg" alt="Cart">
+                <img src="assets/icon (1).svg" alt="Cart" class="icon-white">
+                <img src="assets/black CART.png" alt="Cart" class="icon-black">
                 <span>CART</span>
               </a>
             </div>
           </div>
+
+          <!-- Mobile Menu Overlay -->
+          <div class="mobile-menu-overlay">
+            <div class="mobile-menu-header">
+              <button class="mobile-menu-close" aria-label="Close menu">
+                <span class="close-info">CLOSE</span>
+              </button>
+              <div class="mobile-menu-logo">
+                <img src="assets/MainLOGO.png" alt="ROKUMEI COFFEE">
+              </div>
+              <div class="mobile-menu-header-actions">
+                <a href="#mypage" class="mobile-header-action">
+                  <img src="assets/icon.png" alt="My Page" class="icon-white">
+                  <img src="assets/black MYPAGE.png" alt="My Page" class="icon-black">
+                  <span>MYPAGE</span>
+                </a>
+                <a href="#cart" class="mobile-header-action">
+                  <img src="assets/icon (1).svg" alt="Cart" class="icon-white">
+                  <img src="assets/black CART.png" alt="Cart" class="icon-black">
+                  <span>CART</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="mobile-menu-content">
+              <!-- Red Promo Banner -->
+              <div class="mobile-promo-banner">
+                <p class="promo-text-small">会員登録完了で</p>
+                <p class="promo-text-large">すぐに使える <span class="promo-points">300pt</span> プレゼント実施中</p>
+                <p class="promo-subtext">会員情報へどうぞ &gt;</p>
+              </div>
+
+              <div class="mobile-menu-nav">
+                <!-- Product Accordion -->
+                <div class="mobile-accordion">
+                  <div class="accordion-header">
+                    <div class="header-text">
+                      <span class="ja">商品一覧</span>
+                      <span class="en">PRODUCT</span>
+                    </div>
+                  </div>
+                  <div class="accordion-content">
+                    <a href="#shop" class="sub-link">すべての商品/ALL</a>
+                    <a href="#gift" class="sub-link">ギフト/GIFT</a>
+                    <a href="#subscription" class="sub-link">お茶の定期便/SUBSCRIPTION</a>
+                    <a href="#coffee" class="sub-link">コーヒー豆/COFFEE</a>
+                    <a href="#dripbag" class="sub-link">ドリップバッグ/DRIP BAG</a>
+                    <a href="#liquid" class="sub-link">リキッドコーヒー/LIQUID COFFEE</a>
+                    <a href="#sweets" class="sub-link">スイーツ/SWEETS</a>
+                    <a href="#goods" class="sub-link">オリジナルグッズ/GOODS</a>
+                  </div>
+                </div>
+
+                <!-- Rokumei Selection Accordion -->
+                <div class="mobile-accordion">
+                  <div class="accordion-header">
+                    <div class="header-text">
+                      <span class="ja">ロクメイセレクション</span>
+                      <span class="en">ROKUMEI SELECTION</span>
+                    </div>
+                  </div>
+                  <div class="accordion-content">
+                    <div class="selection-row">
+                      <a href="#gift-selection" class="sub-link">祝意の特選</a>
+                      <span class="badge-red">厳選配送</span>
+                    </div>
+                    <a href="#world" class="sub-link">世界を旅するコーヒー</a>
+                    <a href="#special" class="sub-link">大切な人にむけて ロクメイギフト</a>
+                  </div>
+                </div>
+
+                <!-- About Us Link (Non-accordion) -->
+                <a href="#about" class="mobile-menu-item-link">
+                  <span class="ja">ロクメイコーヒーについて</span>
+                  <span class="en">ABOUT US</span>
+                </a>
+
+                <!-- Shop List Accordion -->
+                <div class="mobile-accordion">
+                  <div class="accordion-header">
+                    <div class="header-text">
+                      <span class="ja">店舗一覧</span>
+                      <span class="en">SHOP LIST</span>
+                    </div>
+                  </div>
+                  <div class="accordion-content">
+                    <a href="#nara" class="sub-link">奈良店</a>
+                    <a href="#factory" class="sub-link">ロクメイコーヒーファクトリー</a>
+                    <a href="#bakes" class="sub-link">ロクメイベイクス</a>
+                    <a href="#grand" class="sub-link">グランスタ丸の内</a>
+                  </div>
+                </div>
+
+                <!-- Column Link (Non-accordion) -->
+                <a href="#column" class="mobile-menu-item-link">
+                  <span class="ja">よみもの。</span>
+                  <span class="en">COLUMN</span>
+                </a>
+              </div>
+
+              <!-- Footer Links -->
+              <div class="mobile-menu-footer">
+                <div class="footer-links-grid">
+                  <div class="links-col">
+                    <a href="#">ご利用ガイド</a>
+                    <a href="#">よくあるご質問</a>
+                    <a href="#">お問い合わせ</a>
+                    <a href="#">プライバシーポリシー</a>
+                  </div>
+                  <div class="links-col">
+                    <a href="#">特定商取引法に基づく表記</a>
+                    <a href="#">採用情報</a>
+                    <a href="#">法人のお客様</a>
+                    <a href="#">メディア掲載情報</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Promo Images -->
+              <div class="mobile-menu-banners">
+                <a href="#"><img src="assets/GIFT.png" alt="GIFT"></a>
+                <a href="#"><img src="assets/初めての方向け.png" alt="First time"></a>
+                <a href="#"><img src="assets/定期便.png" alt="Subscription"></a>
+              </div>
+            </div>
+          </div>
         </header>
 
-        <!-- Left overlay text block -->
-        <div class="hero-overlay-left">
-          <p class="hero-description">コーヒーとパンのある日常</p>
-          <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
-          <p class="hero-subtitle">ロクメイベイクスグランドオープン!</p>
-          <a href="#readmore" class="hero-cta">READ MORE →</a>
-        </div>
+        <div class="hero-progress-line"><span class="progress-bar"></span></div>
 
-        <!-- Right coupon badge -->
+        <!-- Right coupon badge (Keep outside slides) -->
         <div class="hero-badge">
-          <img src="assets/COUPON.png" alt="Line Coupon">
+          <a href="https://page.line.me/921ehldc?openQrModal=true" class="hero-badge-link"><img src="assets/COUPON.png"
+              alt="Line Coupon"></a>
         </div>
       </div>
     </section>
@@ -125,14 +332,26 @@
           <div class="topic-left">
             <a href="#" class="topic-link">
               <img src="assets/GIFT.png" alt="Gift">
+              <div class="topic-arrow-wrapper">
+                <span class="topic-line"></span>
+                <img src="assets/プロパティ1=バリアント2 (1).png" alt="" class="topic-arrow">
+              </div>
             </a>
           </div>
           <div class="topic-right">
             <a href="#" class="topic-link topic-right-item">
               <img src="assets/初めての方向け.png" alt="First time">
+              <div class="topic-arrow-wrapper">
+                <span class="topic-line"></span>
+                <img src="assets/プロパティ1=バリアント2 (1).png" alt="" class="topic-arrow">
+              </div>
             </a>
-            <a href="#" class="topic-right-item">
+            <a href="#" class="topic-link topic-right-item">
               <img src="assets/定期便.png" alt="Regular Flight">
+              <div class="topic-arrow-wrapper">
+                <span class="topic-line"></span>
+                <img src="assets/プロパティ1=バリアント2 (1).png" alt="" class="topic-arrow">
+              </div>
             </a>
           </div>
         </div>
@@ -461,18 +680,23 @@
 
     <!-- Shoplist -->
     <section id="shoplist" class="shoplist section">
-      <div class="shoplist-wrapper">
-        <img src="assets/スタジオセッション-1722 1.png" alt="Shop List Banner" class="shoplist-image">
-        <div class="shoplist-overlay">
-          <h3 class="shoplist-title">SHOP LIST</h3>
-        </div>
-        <div class="shoplist-arrow">
-          <svg width="60" height="8" viewBox="0 0 60 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M59.3536 4.35355C59.5488 4.15829 59.5488 3.84171 59.3536 3.64645L56.1716 0.464466C55.9763 0.269204 55.6597 0.269204 55.4645 0.464466C55.2692 0.659728 55.2692 0.976311 55.4645 1.17157L58.2929 4L55.4645 6.82843C55.2692 7.02369 55.2692 7.34027 55.4645 7.53553C55.6597 7.7308 55.9763 7.7308 56.1716 7.53553L59.3536 4.35355ZM0 4.5H59V3.5H0V4.5Z"
-              fill="white" />
-          </svg>
-        </div>
+      <div class="container fluid-container">
+        <a href="#shoplist" class="shoplist-link">
+          <div class="shoplist-wrapper">
+            <picture>
+              <source media="(max-width: 767px)" srcset="assets/ShopListSP.png">
+              <img src="assets/ShoplistPC.png" alt="Shop List Banner" class="shoplist-image">
+            </picture>
+            <div class="shoplist-overlay">
+              <h3 class="shoplist-title">SHOP LIST</h3>
+            </div>
+            <!-- Arrow Animation Wrapper -->
+            <div class="shoplist-arrow-wrapper">
+              <span class="shoplist-line"></span>
+              <img src="assets/プロパティ1=バリアント2 (1).png" alt="" class="shoplist-arrow-icon">
+            </div>
+          </div>
+        </a>
       </div>
     </section>
   </main>
