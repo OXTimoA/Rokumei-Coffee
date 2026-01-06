@@ -82,6 +82,13 @@ ul {
   list-style: none;
 }
 
+.read-more {
+  position: absolute;
+  bottom: 18px;
+  left: 5px;
+  z-index: 10;
+}
+
 /* ============================================
    Container
    ============================================ */
@@ -91,6 +98,7 @@ ul {
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
+
 
 @media (min-width: 1024px) {
   .container {
@@ -193,7 +201,7 @@ ul {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 3s ease-in-out;
   z-index: 0;
 }
 
@@ -352,7 +360,7 @@ ul {
   height: 1px;
   background-color: currentColor;
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: right top;
   transition: transform 0.3s ease;
 }
 
@@ -362,6 +370,7 @@ ul {
 
 .hero-nav a:hover::after {
   transform: scaleX(1);
+  transform-origin: left top;
 }
 
 .hero-actions {
@@ -437,7 +446,7 @@ ul {
   font-size: 14px;
   font-weight: 700;
   line-height: 20px;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
@@ -445,7 +454,7 @@ ul {
   font-size: 10px;
   font-weight: 700;
   line-height: 100%;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
@@ -1121,7 +1130,7 @@ ul {
 
 .carousel-footer-info {
   display: flex;
-  gap: 40px;
+  gap: 253px;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 14px;
