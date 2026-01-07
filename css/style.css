@@ -13,10 +13,13 @@
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
+  --spacing-ssm: 1.25rem;
   --spacing-md: 1.5rem;
+  --spacing-mmd: 1.75rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-xxl: 4rem;
+  --spacing-xxxl: 126px;
 
   /* Typography */
   --font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -61,8 +64,8 @@ body {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   display: block;
 }
 
@@ -92,20 +95,13 @@ ul {
 /* ============================================
    Container
    ============================================ */
-.container {
-  width: 100%;
-  max-width: var(--max-width-desktop);
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
 
-
-@media (min-width: 1024px) {
+@media (max-width: 1280px){
   .container {
-    padding: 0 var(--spacing-lg);
+    width: 100%;
+    margin: 0 auto;
   }
 }
-
 /* ============================================
    Utility Bar
    ============================================ */
@@ -169,7 +165,7 @@ ul {
    ============================================ */
 .hero {
   width: 100%;
-  margin-bottom: var(--spacing-xl);
+  /* margin-bottom: var(--spacing-xl); */
   position: relative;
   /* Ensure header and other elements stack correctly */
 }
@@ -247,8 +243,8 @@ ul {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: var(--spacing-lg) 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  padding: var(--spacing-ssm) var(--spacing-xl);
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 100%); */
   transition: background-color 0.3s, padding 0.3s, box-shadow 0.3s;
 }
 
@@ -280,7 +276,7 @@ ul {
   top: var(--utility-bar-height-pc);
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: var(--spacing-xs) 0;
+  padding: 3px var(--spacing-xl);
   animation: slideDown 0.3s ease-out;
 }
 
@@ -322,7 +318,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-lg);
+  gap: 2.8rem;
 }
 
 .hero-brand {
@@ -330,14 +326,14 @@ ul {
 }
 
 .hero-logo {
-  height: 50px;
   width: auto;
+  height: auto;
 }
 
 .hero-nav {
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-ssm);
   font-size: var(--font-size-sm);
   font-weight: 500;
   justify-content: center;
@@ -376,13 +372,14 @@ ul {
 .hero-actions {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-ssm);
   flex: 0 0 auto;
 }
 
 .hero-action-link {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 0.5rem;
   color: var(--bg-white);
   font-size: var(--font-size-xs);
@@ -410,8 +407,8 @@ ul {
 }
 
 .hero-action-link img {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   object-fit: contain;
 }
 
@@ -448,6 +445,7 @@ ul {
   line-height: 20px;
   margin-bottom: 0.5rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  width: max-content;
 }
 
 .hero-description {
@@ -568,6 +566,11 @@ ul {
   height: auto;
   max-width: 200px;
   display: block;
+}
+
+.hero-nav-actions{
+  display: flex;
+  gap: 65px;
 }
 
 @media (max-width: 1023px) {
@@ -1011,12 +1014,12 @@ ul {
    Section Title
    ============================================ */
 .section {
-  padding: var(--spacing-xl) 0;
+  padding: 100px 0;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: var(--spacing-lg);
+  padding-bottom: 50px;
 }
 
 .section-header h2 {
@@ -1049,6 +1052,11 @@ ul {
   flex-direction: column;
 }
 
+.section-campaign{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
 @media (max-width: 767px) {
   .campaign {
     width: 375px;
@@ -1106,12 +1114,12 @@ ul {
 }
 
 .campaign-item:hover {
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 .campaign-item img {
-  width: 100%;
-  height: 100%;
+  width: 450px;
+  height: 450px;
   object-fit: cover;
   /* Enforces the aspect ratio/size uniformity */
   display: block;
@@ -1122,7 +1130,8 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 0 var(--spacing-xxxl);
+  padding-top: 30px;
   /* Adjust as needed */
   background-color: #F8F8F8;
   /* Assuming light bg like provided images mostly have */
@@ -1217,6 +1226,10 @@ ul {
 /* ============================================
    Topics Section
    ============================================ */
+.section-topics{
+  padding: 0 var(--spacing-xxxl);
+}
+
 .topics-wrapper {
   display: flex;
   gap: var(--spacing-sm);
@@ -1251,24 +1264,24 @@ ul {
 
 .topic-link img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .topic-link:hover img {
   transform: scale(1.03);
   opacity: 0.5;
+  transition: transform 0.6s ease-in-out;
 }
 
-/* Arrow Animation inside Topics */
+/* ===============================
+   TOPIC ARROW WRAPPER
+================================ */
 .topic-arrow-wrapper {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  width: 60px;
-  /* Reduced base width */
+  width: 88px;
   height: 20px;
   display: flex;
   align-items: center;
@@ -1276,37 +1289,43 @@ ul {
   z-index: 5;
 }
 
-.topic-line {
-  position: absolute;
-  bottom: 0px;
-  right: 0;
-  width: 40px;
-  height: 1px;
-  background-color: var(--bg-white);
-  transition: width 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
+/* ===============================
+   LINE ANIMATION
+================================ */
 
+/* ===============================
+   ARROW IMAGE (CLIP-PATH REVEAL)
+================================ */
 .topic-arrow {
   position: absolute;
   bottom: -3px;
   right: 20px;
-  /* Start position relative to right */
   width: 12px;
   height: auto;
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  opacity: 1;
+  pointer-events: none;
+
   filter: brightness(0) invert(1);
-  /* Ensure it's white if the asset is black */
+
+  /* Initial hidden state (right → left clip) */
+  clip-path: inset(0 100% 0 0);
+
+  transition: clip-path 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  object-fit: cover;
 }
 
+/* ===============================
+   HOVER TRIGGER
+   (Parent must be .topic-link)
+================================ */
 .topic-link:hover .topic-line {
   width: 60px;
 }
 
 .topic-link:hover .topic-arrow {
+  clip-path: inset(0 0 0 0);
   opacity: 1;
-  right: 0;
-  /* Move to end of expanded line */
 }
 
 @media (max-width: 767px) {
@@ -1324,10 +1343,13 @@ ul {
 /* ============================================
    Product Grid (New Arrival & Ranking)
    ============================================ */
+.section-ranking{
+  padding: 0 var(--spacing-xl);
+}
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-md);
+  gap: 10px;
   row-gap: var(--spacing-xl);
   /* More vertical space between rows */
 }
@@ -1340,8 +1362,6 @@ ul {
   border-radius: 0;
   position: relative;
   transition: transform 0.2s;
-  display: flex;
-  flex-direction: column;
 }
 
 .product-card:hover {
@@ -1352,12 +1372,6 @@ ul {
   position: relative;
   width: 100%;
   margin-bottom: var(--spacing-sm);
-  background-color: #E6E2DE;
-  /* Light beige/gray background for image */
-  padding: var(--spacing-md);
-  /* Padding around the product image */
-  overflow: hidden;
-  /* Added to contain scale */
 }
 
 .product-img {
@@ -1401,7 +1415,12 @@ ul {
   transform: scale(1.03);
 }
 
-.product-card:hover .product-name {
+.product-card:hover .product-name{
+  text-decoration: underline;
+  text-decoration-color: #000;
+}
+
+.product-card:hover .product-price{
   text-decoration: underline;
   text-decoration-color: #000;
 }
@@ -1411,13 +1430,17 @@ ul {
   color: var(--text-gray);
   font-weight: 400;
   margin-top: auto;
+  line-height: 1.5;
+  transition: text-decoration 0.3s ease;
 }
 
 .tax-note {
   font-size: 0.65rem;
   color: #999;
 }
-
+.new-arrivals{
+  padding: 100px var(--spacing-xl);
+}
 /* Old badge styles removed */
 
 @media (max-width: 1023px) {
@@ -1449,7 +1472,6 @@ ul {
    ============================================ */
 .about {
   padding: 0;
-  margin: var(--spacing-xl) 0;
   width: 100%;
 }
 
@@ -1457,7 +1479,7 @@ ul {
   position: relative;
   width: 100%;
   /* Define a height or aspect ratio based on the image/design */
-  height: 600px;
+  height: 775px;
   overflow: hidden;
 }
 
@@ -1474,7 +1496,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: var(--spacing-xxl);
+  padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1521,6 +1543,9 @@ ul {
 /* ============================================
    Category Section
    ============================================ */
+.section-category{
+  padding: 0 var(--spacing-xxxl);
+}
 .category {
   background-color: #EEEAE6;
   /* Light beige/gray background from design */
@@ -1632,7 +1657,6 @@ ul {
    ============================================ */
 .ranking-tabs {
   display: flex;
-  justify-content: center;
   gap: 3rem;
   /* Spacing between tabs */
   margin-bottom: var(--spacing-xxl);
@@ -1643,13 +1667,14 @@ ul {
 }
 
 .tab-btn {
+  width: 50%;
   background: none;
   border: none;
   font-size: 0.9rem;
   color: #999;
   /* Inactive color */
   cursor: pointer;
-  padding: 0 1rem 1rem;
+  padding-bottom: 10px;
   position: relative;
   transition: color 0.3s;
   font-weight: 500;
@@ -1750,10 +1775,13 @@ ul {
   background-color: #EEEAE6;
 }
 
+.section-column{
+  padding: 0 var(--spacing-xl);
+}
 .column-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-md);
+  gap: 10px;
   margin-bottom: var(--spacing-xl);
 }
 
@@ -1795,7 +1823,6 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  margin-bottom: var(--spacing-sm);
 }
 
 .column-tag {
@@ -1810,6 +1837,7 @@ ul {
   font-family: sans-serif;
   /* Monospace or numeric font if preferred */
   color: var(--text-dark);
+  margin-bottom: 10px;
 }
 
 .column-title {
@@ -1844,40 +1872,44 @@ ul {
 /* ============================================
    News Section
    ============================================ */
-.news-list {
-  background-color: var(--bg-white);
-  border-radius: 4px;
-  padding: var(--spacing-md);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.news-item {
+.section-news{
   display: flex;
-  gap: var(--spacing-md);
-  padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid var(--border-gray);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25.0625rem;
 }
 
-.news-item:last-child {
-  border-bottom: none;
+.news-list{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.news-date {
-  font-size: var(--font-size-sm);
-  color: var(--text-gray);
-  font-weight: 500;
-  min-width: 100px;
-  flex-shrink: 0;
+.news-item{
+  display: flex;
+  gap: 79px;
 }
 
+.news-date,
 .news-text {
   font-size: var(--font-size-sm);
   line-height: 1.6;
-  color: var(--text-dark);
   position: relative;
   display: inline-block;
 }
 
+.news-date {
+  color: var(--text-gray);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.news-text {
+  color: var(--text-dark);
+}
+
+.news-date::after,
 .news-text::after {
   content: "";
   position: absolute;
@@ -1887,14 +1919,18 @@ ul {
   height: 1px;
   background-color: currentColor;
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: right top;
   transition: transform 0.3s ease;
 }
 
+.news-item:hover .news-date::after,
 .news-item:hover .news-text::after {
   transform: scaleX(1);
+  transform-origin: left top;
 }
-
+.news-item > span{
+  width: fit-content;
+}
 @media (max-width: 767px) {
   .news-item {
     flex-direction: column;
@@ -1911,8 +1947,6 @@ ul {
    ============================================ */
 .shoplist {
   background-color: #EEEAE6;
-  padding: 0;
-  margin-top: var(--spacing-xl);
   margin-bottom: 0;
   /* Flush with footer if needed */
 }
@@ -1922,7 +1956,6 @@ ul {
 .shoplist-wrapper {
   position: relative;
   width: 100%;
-  height: 400px;
   /* Specific height for banner feel */
   overflow: hidden;
 }
@@ -1987,11 +2020,10 @@ ul {
 /* ============================================
    Shop List Section Styles
    ============================================ */
-.shoplist .fluid-container {
-  padding: 0;
-  max-width: 100%;
-}
 
+.section-shoplist{
+  padding: 0 var(--spacing-xxxl);
+}
 .shoplist-link {
   display: block;
   width: 100%;
@@ -2045,16 +2077,14 @@ ul {
 /* Arrow Animation Wrapper */
 .shoplist-arrow-wrapper {
   position: absolute;
-  bottom: 40px;
-  right: 5%;
-  /* Adjust based on design, e.g. 5% or fixed pixel */
-  width: 60px;
-  /* Initial visual width logic same as others */
+  bottom: 20px;
+  right: 20px;
+  width: 88px;
   height: 20px;
   display: flex;
   align-items: center;
   pointer-events: none;
-  z-index: 10;
+  z-index: 5;
 }
 
 .shoplist-line {
@@ -2064,6 +2094,7 @@ ul {
   width: 40px;
   height: 1px;
   background-color: #fff;
+  display: none;
   transition: width 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -2071,12 +2102,19 @@ ul {
   position: absolute;
   bottom: -3px;
   right: 20px;
-  width: 12px;
+  width: 84px;
   height: auto;
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  pointer-events: none;
+  border-color: #F3F0EF;
+  display: block;
   filter: brightness(0) invert(1);
-  /* Ensure it's white */
+
+  /* Initial hidden state (right → left clip) */
+  clip-path: inset(0 100% 0 0);
+
+  transition: clip-path 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  object-fit: cover;
 }
 
 /* Hover Effect: Arrow Animation */
@@ -2085,8 +2123,8 @@ ul {
 }
 
 .shoplist-link:hover .shoplist-arrow-icon {
+  clip-path: inset(0 0 0 0);
   opacity: 1;
-  right: 0;
   /* Move to end */
 }
 
@@ -2101,9 +2139,6 @@ ul {
   }
 }
 
-
-
-
 /* ============================================
    Footer
    ============================================ */
@@ -2116,8 +2151,7 @@ ul {
   background-color: transparent;
   /* Remove solid color */
   color: #000;
-  padding: var(--spacing-xxl) 0;
-  margin-top: var(--spacing-xxl);
+  padding: 3.125rem 0 0 0;
   overflow: hidden;
   /* Ensure image doesn't spill out */
 }
@@ -2140,32 +2174,27 @@ ul {
   align-items: flex-start;
   gap: var(--spacing-xl);
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
   position: relative;
-  /* Ensure text sits above image */
+  padding: 0 0 0 var(--spacing-xl);
   z-index: 1;
-}
-
-.footer-left {
-  flex: 0 0 30%;
+  margin-bottom: 6rem;
 }
 
 .footer-logo {
-  font-size: 2.5rem;
+  font-size: 3.125rem;
   font-weight: 400;
   /* Serif feel? */
   margin: 0;
-  font-family: serif;
-  /* If branding uses serif */
-  line-height: 1;
+  font-family: Rahere Roman Display;
+  /* If branding uses Rahere Roman Display */
+  line-height: 80px;
+  color: #020202;
 }
 
 .footer-content-right {
   display: flex;
   justify-content: space-between;
-  flex: 1;
-  gap: var(--spacing-xl);
+  gap: 50px;
 }
 
 .footer-links-area {
@@ -2215,7 +2244,7 @@ ul {
 }
 
 .footer-newsletter {
-  width: 300px;
+  width: 330px;
 }
 
 .newsletter-title {
@@ -2227,7 +2256,7 @@ ul {
 .newsletter-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
 .newsletter-input {
@@ -2274,13 +2303,11 @@ ul {
 }
 
 .footer-copyright {
-  text-align: right;
-  padding-right: var(--spacing-md);
-  margin-top: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
   font-size: 0.7rem;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: Circular Std;
+  padding-bottom:var(--spacing-sm);
 }
 
 @media (max-width: 900px) {
