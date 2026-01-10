@@ -92,7 +92,7 @@ ul {
    Container
    ============================================ */
 .container {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   width: 100%;
   margin-inline: auto;
 }
@@ -1911,7 +1911,7 @@ ul {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   /* utility-bar setting */
 
   .utility-bar {
@@ -2222,7 +2222,7 @@ ul {
   }
 }
 
-@media (min-width: 375px){
+@media (min-width: 375px) and (max-width: 767px){
   /* hero selection */
   
   .hero-actions{
