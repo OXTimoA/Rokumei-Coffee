@@ -196,7 +196,6 @@
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
               <span></span>
               <span></span>
-              <span></span>
             </button>
             <a href="#home" class="hero-brand">
               <img
@@ -236,7 +235,7 @@
                 <span class="close-info">CLOSE</span>
               </button>
               <div class="mobile-menu-logo">
-                <img src="assets/img/MainLOGO.png" alt="ROKUMEI COFFEE">
+                <img src="assets/img/LOGO.png" alt="ROKUMEI COFFEE">
               </div>
               <div class="mobile-menu-header-actions">
                 <a href="#mypage" class="mobile-header-action">
@@ -348,10 +347,33 @@
 
               <!-- Promo Images -->
               <div class="mobile-menu-banners">
-                <a href="#"><img src="assets/img/GIFT.png" alt="GIFT"></a>
-                <a href="#"><img src="assets/img/初めての方向け.png" alt="First time"></a>
-                <a href="#"><img src="assets/img/定期便.png" alt="Subscription"></a>
+
+                <a href="#" class="topic-link mobile-banner-item">
+                  <img src="assets/img/GIFT.png" alt="GIFT">
+                  <div class="topic-arrow-wrapper">
+                    <span class="topic-line"></span>
+                    <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="topic-arrow">
+                  </div>
+                </a>
+              
+                <a href="#" class="topic-link mobile-banner-item">
+                  <img src="assets/img/初めての方向け.png" alt="First time">
+                  <div class="topic-arrow-wrapper">
+                    <span class="topic-line"></span>
+                    <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="topic-arrow">
+                  </div>
+                </a>
+              
+                <a href="#" class="topic-link mobile-banner-item">
+                  <img src="assets/img/定期便.png" alt="Subscription">
+                  <div class="topic-arrow-wrapper">
+                    <span class="topic-line"></span>
+                    <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="topic-arrow">
+                  </div>
+                </a>
+              
               </div>
+
             </div>
           </div>
         </header>
@@ -695,7 +717,7 @@
         </div>
         <div class="view-all-container">
           <a href="#" class="view-all-btn">
-            すべての商品を見る
+            <span>すべての商品を見る</span>
             <svg width="60" height="8" viewBox="0 0 60 8" fill="none" xmlns="http://www.w3.org/2000/svg"
               class="arrow-long">
               <path
@@ -753,7 +775,7 @@
         </div>
         <div class="view-all-container">
           <a href="#" class="view-all-btn">
-            すべての商品を見る
+            <span>すべての商品を見る</span>
             <svg width="60" height="8" viewBox="0 0 60 8" fill="none" xmlns="http://www.w3.org/2000/svg"
               class="arrow-long">
               <path
@@ -901,7 +923,7 @@
         onUpdate: (self) => {
           navItems.forEach(item => item.classList.remove('active'));
           const activeIndex = Math.round(self.progress * (slides.length - 1));
-          navItems[activeIndex].classList.add('active');
+          // navItems[activeIndex].classList.add('active');
         },
       },
     });
