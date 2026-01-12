@@ -442,8 +442,8 @@ ul {
 
 /* Right Coupon Badge */
 .hero-badge {
-  position: absolute;
-  bottom: 1.5rem;
+  position: fixed;
+  bottom: 17.5rem;
   right: 1.5rem;
   z-index: 10;
 }
@@ -1047,7 +1047,6 @@ ul {
 .product-image-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -2112,7 +2111,7 @@ ul {
   }
 
   .hero-badge {
-    bottom: 1rem;
+    bottom: 13rem;
     right: 1rem;
   }
 
