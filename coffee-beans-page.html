@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Beans</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/coffee-beans-page.css"> -->
+    <script src="assets/js/main.js" defer></script>
 </head>
 <body>
     <div class="utility-bar">
@@ -14,463 +16,310 @@
         </center>
       </div>
     </div>
-    <main>
-      <!-- Hero -->
-      <section class="hero" aria-label="Featured">
-        <div class="hero-media">
-          <!-- Slideshow Container -->
-          <div class="hero-slides">
-            <!-- Slide 1 -->
-            <div class="hero-slide active">
-              <picture>
-                <source media="(max-width: 767px)" srcset="assets/img/FV01_SP.png">
-                <img src="assets/img/FV_01_PC.png" alt="Rokumei Coffee Slide 1">
-              </picture>
-              <div class="hero-overlay-left">
-                <p class="hero-title">コーヒーとパンのある日常</p>
-                <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
-                <p class="hero-description">ロクメイベイクスグランドオープン!</p>
-                <a href="#readmore" class="hero-cta">
-                  <p class="read-more">READ MORE<span class="cta-line"></span></p>
-                  <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="cta-arrow">
-                </a>
-              </div>
-            </div>
-  
-            <!-- Slide 2 -->
-            <div class="hero-slide">
-              <picture>
-                <source media="(max-width: 767px)" srcset="assets/img/FV02_SP.png">
-                <img src="assets/img/FV_02_PC.png" alt="Rokumei Coffee Slide 2">
-              </picture>
-              <div class="hero-overlay-left">
-                <!-- Placeholder text for other slides, assuming same structure or updated content. 
-                      I'll keep the same text structure for now or maybe vary slightly if implicit content isn't provided. 
-                      User just said "different image have different text", so I will duplicate the block. -->
-                <p class="hero-title">コーヒーとパンのある日常</p>
-                <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
-                <p class="hero-description">ロクメイベイクスグランドオープン！</p>
-                <a href="#readmore" class="hero-cta">
-                  <p class="read-more">READ MORE<span class="cta-line"></span></p>
-                  <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="cta-arrow">
-                </a>
-              </div>
-            </div>
-  
-            <!-- Slide 3 -->
-            <div class="hero-slide">
-              <picture>
-                <source media="(max-width: 767px)" srcset="assets/img/FV03_SP.png">
-                <img src="assets/img/FV_03_PC.png" alt="Rokumei Coffee Slide 3">
-              </picture>
-              <div class="hero-overlay-left">
-                <p class="hero-title">選び抜かれた、ロクメイセレクション</p>
-                <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
-                <p class="hero-description">ロクメイベイクスグランドオープン！</p>
-                <a href="#readmore" class="hero-cta">
-                  <p class="read-more">READ MORE<span class="cta-line"></span></p>
-                  <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="cta-arrow">
-                </a>
-              </div>
-            </div>
-  
-            <!-- Slide 4 -->
-            <div class="hero-slide">
-              <picture>
-                <source media="(max-width: 767px)" srcset="assets/img/FV04_SP.png">
-                <img src="assets/img/FV_04_PC.png" alt="Rokumei Coffee Slide 4">
-              </picture>
-              <div class="hero-overlay-left">
-                <p class="hero-title">日常をロクメイと。</p>
-                <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
-                <p class="hero-description">ロクメイベイクスグランドオープン！</p>
-                <a href="#readmore" class="hero-cta">
-                  <p class="read-more">READ MORE<span class="cta-line"></span></p>
-                  <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="cta-arrow">
-                </a>
-              </div>
-            </div>
-  
-            <!-- Slide 5 -->
-            <div class="hero-slide">
-              <picture>
-                <source media="(max-width: 767px)" srcset="assets/img/FV05_SP.png">
-                <img src="assets/img/FV_05_PC.png" alt="Rokumei Coffee Slide 5">
-              </picture>
-              <div class="hero-overlay-left">
-                <p class="hero-title">新パッケージになりました！</p>
-                <p class="hero-description">こだわりのコーヒーと、温かいパンで日常を彩ります。</p>
-                <p class="hero-description">ロクメイベイクスグランドオープン！</p>
-                <a href="#readmore" class="hero-cta">
-                  <p class="read-more">READ MORE<span class="cta-line"></span></p>
-                  <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="cta-arrow">
-                </a>
-              </div>
-            </div>
-          </div>
-  
-          <!-- Navbar integrated in hero (Restored to inside hero-media)-->
-          <header class="hero-header site-header">
-            <div class="container hero-header-inner">
-              <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-              </button>
-              <a href="#home" class="hero-brand">
-                <img
-                  id="heroLogo"
-                  src="assets/img/MainLOGO.png"
-                  alt="ROKUMEI COFFEE"
-                  class="hero-logo"
-                >
-              </a>                    
-              <div class="hero-nav-actions">
-                <nav class="hero-nav" aria-label="Primary">
-                  <a href="#shop" class="nav-link">商品一覧</a>
-                  <a href="#selection" class="nav-link">ロクメイセレクション</a>
-                  <a href="#about" class="nav-link">ロクメイコーヒーについて</a>
-                  <a href="#shoplist" class="nav-link">店舗一覧</a>
-                  <a href="#column" class="nav-link">よみもの。</a>
-                </nav>
-                <div class="hero-actions">
-                  <a href="#mypage" class="hero-action-link">
-                    <img src="assets/img/icon.png" alt="My Page" class="icon-white">
-                    <img src="assets/img/black MYPAGE.png" alt="My Page" class="icon-black">
-                    <span>MYPAGE</span>
-                  </a>
-                  <a href="#cart" class="hero-action-link">
-                    <img src="assets/img/icon (1).svg" alt="Cart" class="icon-white">
-                    <img src="assets/img/black CART.png" alt="Cart" class="icon-black">
-                    <span>CART</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-  
-            <!-- Mobile Menu Overlay -->
-            <div class="mobile-menu-overlay">
-              <div class="mobile-menu-header">
-                <button class="mobile-menu-close" aria-label="Close menu">
-                  <span class="close-info">CLOSE</span>
-                </button>
-                <div class="mobile-menu-logo">
-                  <img src="assets/img/LOGO.png" alt="ROKUMEI COFFEE">
-                </div>
-                <div class="mobile-menu-header-actions">
-                  <a href="#mypage" class="mobile-header-action">
-                    <img src="assets/img/icon.png" alt="My Page" class="icon-white">
-                    <img src="assets/img/black MYPAGE.png" alt="My Page" class="icon-black">
-                    <span>MYPAGE</span>
-                  </a>
-                  <a href="#cart" class="mobile-header-action">
-                    <img src="assets/img/icon (1).svg" alt="Cart" class="icon-white">
-                    <img src="assets/img/black CART.png" alt="Cart" class="icon-black">
-                    <span>CART</span>
-                  </a>
-                </div>
-              </div>
-  
-              <div class="mobile-menu-content">
-                <!-- Red Promo Banner -->
-                <div class="mobile-promo-banner">
-                  <p class="promo-text-small">会員登録完了で</p>
-                  <p class="promo-text-large">すぐに使える <span class="promo-points">300pt</span> プレゼント実施中</p>
-                  <p class="promo-subtext">会員情報へどうぞ &gt;</p>
-                </div>
-  
-                <div class="mobile-menu-nav">
-                  <!-- Product Accordion -->
-                  <div class="mobile-accordion">
-                    <div class="accordion-header">
-                      <div class="header-text">
-                        <span class="ja">商品一覧</span>
-                        <span class="en">PRODUCT</span>
-                      </div>
-                    </div>
-                    <div class="accordion-content">
-                      <a href="#shop" class="sub-link">すべての商品/ALL</a>
-                      <a href="#gift" class="sub-link">ギフト/GIFT</a>
-                      <a href="#subscription" class="sub-link">お茶の定期便/SUBSCRIPTION</a>
-                      <a href="#coffee" class="sub-link">コーヒー豆/COFFEE</a>
-                      <a href="#dripbag" class="sub-link">ドリップバッグ/DRIP BAG</a>
-                      <a href="#liquid" class="sub-link">リキッドコーヒー/LIQUID COFFEE</a>
-                      <a href="#sweets" class="sub-link">スイーツ/SWEETS</a>
-                      <a href="#goods" class="sub-link">オリジナルグッズ/GOODS</a>
-                    </div>
-                  </div>
-  
-                  <!-- Rokumei Selection Accordion -->
-                  <div class="mobile-accordion">
-                    <div class="accordion-header">
-                      <div class="header-text">
-                        <span class="ja">ロクメイセレクション</span>
-                        <span class="en">ROKUMEI SELECTION</span>
-                      </div>
-                    </div>
-                    <div class="accordion-content">
-                      <div class="selection-row">
-                        <a href="#gift-selection" class="sub-link">祝意の特選</a>
-                        <span class="badge-red">厳選配送</span>
-                      </div>
-                      <a href="#world" class="sub-link">世界を旅するコーヒー</a>
-                      <a href="#special" class="sub-link">大切な人にむけて ロクメイギフト</a>
-                    </div>
-                  </div>
-  
-                  <!-- About Us Link (Non-accordion) -->
-                  <a href="#about" class="mobile-menu-item-link">
-                    <span class="ja">ロクメイコーヒーについて</span>
-                    <span class="en">ABOUT US</span>
-                  </a>
-  
-                  <!-- Shop List Accordion -->
-                  <div class="mobile-accordion">
-                    <div class="accordion-header">
-                      <div class="header-text">
-                        <span class="ja">店舗一覧</span>
-                        <span class="en">SHOP LIST</span>
-                      </div>
-                    </div>
-                    <div class="accordion-content">
-                      <a href="#nara" class="sub-link">奈良店</a>
-                      <a href="#factory" class="sub-link">ロクメイコーヒーファクトリー</a>
-                      <a href="#bakes" class="sub-link">ロクメイベイクス</a>
-                      <a href="#grand" class="sub-link">グランスタ丸の内</a>
-                    </div>
-                  </div>
-  
-                  <!-- Column Link (Non-accordion) -->
-                  <a href="#column" class="mobile-menu-item-link">
-                    <span class="ja">よみもの。</span>
-                    <span class="en">COLUMN</span>
-                  </a>
-                </div>
-  
-                <!-- Footer Links -->
-                <div class="mobile-menu-footer">
-                  <div class="footer-links-grid">
-                    <div class="links-col">
-                      <a href="#">ご利用ガイド</a>
-                      <a href="#">よくあるご質問</a>
-                      <a href="#">お問い合わせ</a>
-                      <a href="#">プライバシーポリシー</a>
-                    </div>
-                    <div class="links-col">
-                      <a href="#">特定商取引法に基づく表記</a>
-                      <a href="#">採用情報</a>
-                      <a href="#">法人のお客様</a>
-                      <a href="#">メディア掲載情報</a>
-                    </div>
-                  </div>
-                </div>
-  
-                <!-- Promo Images -->
-                <div class="mobile-menu-banners">
-  
-                  <a href="#" class="topic-link mobile-banner-item">
-                    <img src="assets/img/GIFT.png" alt="GIFT">
-                    <div class="topic-arrow-wrapper">
-                      <span class="topic-line"></span>
-                      <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="topic-arrow">
-                    </div>
-                  </a>
-                
-                  <a href="#" class="topic-link mobile-banner-item">
-                    <img src="assets/img/初めての方向け.png" alt="First time">
-                    <div class="topic-arrow-wrapper">
-                      <span class="topic-line"></span>
-                      <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="topic-arrow">
-                    </div>
-                  </a>
-                
-                  <a href="#" class="topic-link mobile-banner-item">
-                    <img src="assets/img/定期便.png" alt="Subscription">
-                    <div class="topic-arrow-wrapper">
-                      <span class="topic-line"></span>
-                      <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="topic-arrow">
-                    </div>
-                  </a>
-                
-                </div>
-  
-              </div>
-            </div>
-          </header>
-  
-          <div class="hero-progress-line"><span class="progress-bar"></span></div>
-  
-          <!-- Right coupon badge (Keep outside slides) -->
-          <div class="hero-badge">
-            <div class="hero-badge-close"></div>
-            <a href="https://page.line.me/921ehldc?openQrModal=true" class="hero-badge-link"><img src="assets/img/COUPON.png"
-                alt="Line Coupon"></a>
-          </div>
-        </div>
-      </section>
-  
-      <!-- New Arrival -->
-      <section id="new" class="new-arrivals section">
-        <div class="container">
-          <header class="section-header">
-            <h2>NEW ARRIVAL</h2>
-          </header>
-          <div class="product-grid">
-            <!-- Row 1 -->
-            <article class="product-card">
-              <img src="assets/img/new.png" alt="New" class="new-badge-img">
-              <div class="product-image-wrapper">
-                <img src="assets/img/rcob-tobihino_pic_01 1.png" alt="Tobihino Blend" class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">飛火野ブレンド</p>
-                <p class="product-price">¥1,980 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/img/new.png" alt="New" class="new-badge-img">
-              <div class="product-image-wrapper">
-                <img src="assets/img/000000000664-01-l 1.png" alt="Brazil" class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">【訳あり 40%OFF】クラフトコーヒー<br>ブーケブレンド<br>(母の日ラベル) 330ml 1本</p>
-                <p class="product-price">¥648 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/img/new.png" alt="New" class="new-badge-img">
-              <div class="product-image-wrapper">
-                <img src="assets/img/000000000661-01-l 1.png" alt="Cold Brew" class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">水出しコーヒーパックCOLD BREW<br>Refresh (コールドブリューリフレッシュ)<br>5パック (約17杯分)</p>
-                <p class="product-price">¥1,180 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/img/new.png" alt="New" class="new-badge-img">
-              <div class="product-image-wrapper">
-                <img src="assets/img/528304648_18522991381050972_9199068920409036052_n 1.png" alt="Pudding"
-                  class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">ファクトリーブレンド</p>
-                <p class="product-price">¥1,780 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-  
-            <!-- Row 2 (Duplicate of Row 1) -->
-            <article class="product-card">
-              <img src="assets/img/new.png" alt="New" class="new-badge-img">
-              <div class="product-image-wrapper">
-                <img src="assets/img/rcob-tobihino_pic_01 1.png" alt="Tobihino Blend" class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">飛火野ブレンド</p>
-                <p class="product-price">¥1,980 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/img/new.png" alt="New" class="new-badge-img">
-              <div class="product-image-wrapper">
-                <img src="assets/img/000000000664-01-l 1.png" alt="Craft Coffee" class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">【訳あり 40%OFF】クラフトコーヒー<br>ブーケブレンド<br>(母の日ラベル) 330ml 1本</p>
-                <p class="product-price">¥648 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/img/new.png" alt="New" class="new-badge-img">
-              <div class="product-image-wrapper">
-                <img src="assets/img/000000000661-01-l 1.png" alt="Cold Brew" class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">水出しコーヒーパックCOLD BREW<br>Refresh (コールドブリューリフレッシュ)<br>5パック (約17杯分)</p>
-                <p class="product-price">¥1,180 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-            <article class="product-card">
-              <img src="assets/img/new.png" alt="New" class="new-badge-img">
-              <div class="product-image-wrapper">
-                <img src="assets/img/528304648_18522991381050972_9199068920409036052_n 1.png" alt="Pudding"
-                  class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">ファクトリーブレンド</p>
-                <p class="product-price">¥1,780 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-  
-      <!-- Ranking -->
-      <section id="ranking" class="ranking section">
-        <div class="container section-ranking">
-          <header class="section-header">
-            <h2>RANKING</h2>
-          </header>
-          <div class="ranking-tabs">
-            <button class="tab-btn active">ベストセラー</button>
-            <button class="tab-btn">ギフト人気</button>
-          </div>
-          <div class="product-grid ranking-grid">
-            <article class="product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/new.png" alt="New" class="new-badge-img">
-                <img src="assets/img/rcob-tobihino_pic_01 1.png" alt="Tobihino Blend" class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">飛火野ブレンド</p>
-                <p class="product-price">¥1,980 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/new.png" alt="New" class="new-badge-img">
-                <img src="assets/img/000000000664-01-l 1.png" alt="Brazil" class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">【訳あり 40%OFF】クラフトコーヒー<br>ブーケブレンド<br>(母の日ラベル) 330ml 1本</p>
-                <p class="product-price">¥648 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/new.png" alt="New" class="new-badge-img">
-                <img src="assets/img/000000000661-01-l 1.png" alt="Cold Brew" class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">水出しコーヒーパックCOLD BREW<br>Refresh (コールドブリューリフレッシュ)<br>5パック (約17杯分)</p>
-                <p class="product-price">¥1,180 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-            <article class="product-card">
-              <div class="product-image-wrapper">
-                <img src="assets/img/new.png" alt="New" class="new-badge-img">
-                <img src="assets/img/528304648_18522991381050972_9199068920409036052_n 1.png" alt="Pudding"
-                  class="product-img">
-              </div>
-              <div class="product-meta">
-                <p class="product-name">ファクトリーブレンド</p>
-                <p class="product-price">¥1,780 <span class="tax-note">(税込)</span></p>
-              </div>
-            </article>
-          </div>
-          <div class="view-all-container">
-            <a href="#" class="view-all-btn">
-              <span>すべての商品を見る</span>
-              <svg width="60" height="8" viewBox="0 0 60 8" fill="none" xmlns="http://www.w3.org/2000/svg"
-                class="arrow-long">
-                <path
-                  d="M59.3536 4.35355C59.5488 4.15829 59.5488 3.84171 59.3536 3.64645L56.1716 0.464466C55.9763 0.269204 55.6597 0.269204 55.4645 0.464466C55.2692 0.659728 55.2692 0.976311 55.4645 1.17157L58.2929 4L55.4645 6.82843C55.2692 7.02369 55.2692 7.34027 55.4645 7.53553C55.6597 7.7308 55.9763 7.7308 56.1716 7.53553L59.3536 4.35355ZM0 4.5H59V3.5H0V4.5Z"
-                  fill="currentColor" />
-              </svg>
+    <!-- Navbar integrated in hero (Restored to inside hero-media)-->
+    <header class="hero-header site-header sticky">
+      <div class="container hero-header-inner">
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+        </button>
+        <a href="#home" class="hero-brand">
+          <img id="heroLogo" src="assets/img/LOGO.png" alt="ROKUMEI COFFEE" class="hero-logo">
+        </a>                    
+        <div class="hero-nav-actions">
+          <nav class="hero-nav" aria-label="Primary">
+            <a href="#shop" class="nav-link">商品一覧</a>
+            <a href="#selection" class="nav-link">ロクメイセレクション</a>
+            <a href="#about" class="nav-link">ロクメイコーヒーについて</a>
+            <a href="#shoplist" class="nav-link">店舗一覧</a>
+            <a href="#column" class="nav-link">よみもの。</a>
+          </nav>
+          <div class="hero-actions">
+            <a href="#mypage" class="hero-action-link">
+              <img src="assets/img/icon.png" alt="My Page" class="icon-white">
+              <img src="assets/img/black MYPAGE.png" alt="My Page" class="icon-black">
+              <span>MYPAGE</span>
+            </a>
+            <a href="#cart" class="hero-action-link">
+              <img src="assets/img/icon (1).svg" alt="Cart" class="icon-white">
+              <img src="assets/img/black CART.png" alt="Cart" class="icon-black">
+              <span>CART</span>
             </a>
           </div>
         </div>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay">
+        <div class="mobile-menu-header">
+          <button class="mobile-menu-close" aria-label="Close menu">
+            <span class="close-info">CLOSE</span>
+          </button>
+          <div class="mobile-menu-logo">
+            <img src="assets/img/LOGO.png" alt="ROKUMEI COFFEE">
+          </div>
+          <div class="mobile-menu-header-actions">
+            <a href="#mypage" class="mobile-header-action">
+              <img src="assets/img/icon.png" alt="My Page" class="icon-white">
+              <img src="assets/img/black MYPAGE.png" alt="My Page" class="icon-black">
+              <span>MYPAGE</span>
+            </a>
+            <a href="#cart" class="mobile-header-action">
+              <img src="assets/img/icon (1).svg" alt="Cart" class="icon-white">
+              <img src="assets/img/black CART.png" alt="Cart" class="icon-black">
+              <span>CART</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mobile-menu-content">
+          <!-- Red Promo Banner -->
+          <div class="mobile-promo-banner">
+            <p class="promo-text-small">会員登録完了で</p>
+            <p class="promo-text-large">すぐに使える <span class="promo-points">300pt</span> プレゼント実施中</p>
+            <p class="promo-subtext">会員情報へどうぞ &gt;</p>
+          </div>
+
+          <div class="mobile-menu-nav">
+            <!-- Product Accordion -->
+            <div class="mobile-accordion">
+              <div class="accordion-header">
+                <div class="header-text">
+                  <span class="ja">商品一覧</span>
+                  <span class="en">PRODUCT</span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <a href="#shop" class="sub-link">すべての商品/ALL</a>
+                <a href="#gift" class="sub-link">ギフト/GIFT</a>
+                <a href="#subscription" class="sub-link">お茶の定期便/SUBSCRIPTION</a>
+                <a href="#coffee" class="sub-link">コーヒー豆/COFFEE</a>
+                <a href="#dripbag" class="sub-link">ドリップバッグ/DRIP BAG</a>
+                <a href="#liquid" class="sub-link">リキッドコーヒー/LIQUID COFFEE</a>
+                <a href="#sweets" class="sub-link">スイーツ/SWEETS</a>
+                <a href="#goods" class="sub-link">オリジナルグッズ/GOODS</a>
+              </div>
+            </div>
+
+            <!-- Rokumei Selection Accordion -->
+            <div class="mobile-accordion">
+              <div class="accordion-header">
+                <div class="header-text">
+                  <span class="ja">ロクメイセレクション</span>
+                  <span class="en">ROKUMEI SELECTION</span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <div class="selection-row">
+                  <a href="#gift-selection" class="sub-link">祝意の特選</a>
+                  <span class="badge-red">厳選配送</span>
+                </div>
+                <a href="#world" class="sub-link">世界を旅するコーヒー</a>
+                <a href="#special" class="sub-link">大切な人にむけて ロクメイギフト</a>
+              </div>
+            </div>
+
+            <!-- About Us Link (Non-accordion) -->
+            <a href="#about" class="mobile-menu-item-link">
+              <span class="ja">ロクメイコーヒーについて</span>
+              <span class="en">ABOUT US</span>
+            </a>
+
+            <!-- Shop List Accordion -->
+            <div class="mobile-accordion">
+              <div class="accordion-header">
+                <div class="header-text">
+                  <span class="ja">店舗一覧</span>
+                  <span class="en">SHOP LIST</span>
+                </div>
+              </div>
+              <div class="accordion-content">
+                <a href="#nara" class="sub-link">奈良店</a>
+                <a href="#factory" class="sub-link">ロクメイコーヒーファクトリー</a>
+                <a href="#bakes" class="sub-link">ロクメイベイクス</a>
+                <a href="#grand" class="sub-link">グランスタ丸の内</a>
+              </div>
+            </div>
+
+            <!-- Column Link (Non-accordion) -->
+            <a href="#column" class="mobile-menu-item-link">
+              <span class="ja">よみもの。</span>
+              <span class="en">COLUMN</span>
+            </a>
+          </div>
+
+          <!-- Footer Links -->
+          <div class="mobile-menu-footer">
+            <div class="footer-links-grid">
+              <div class="links-col">
+                <a href="#">ご利用ガイド</a>
+                <a href="#">よくあるご質問</a>
+                <a href="#">お問い合わせ</a>
+                <a href="#">プライバシーポリシー</a>
+              </div>
+              <div class="links-col">
+                <a href="#">特定商取引法に基づく表記</a>
+                <a href="#">採用情報</a>
+                <a href="#">法人のお客様</a>
+                <a href="#">メディア掲載情報</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promo Images -->
+          <div class="mobile-menu-banners">
+
+            <a href="#" class="topic-link mobile-banner-item">
+              <img src="assets/img/GIFT.png" alt="GIFT">
+              <div class="topic-arrow-wrapper">
+                <span class="topic-line"></span>
+                <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="topic-arrow">
+              </div>
+            </a>
+          
+            <a href="#" class="topic-link mobile-banner-item">
+              <img src="assets/img/初めての方向け.png" alt="First time">
+              <div class="topic-arrow-wrapper">
+                <span class="topic-line"></span>
+                <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="topic-arrow">
+              </div>
+            </a>
+          
+            <a href="#" class="topic-link mobile-banner-item">
+              <img src="assets/img/定期便.png" alt="Subscription">
+              <div class="topic-arrow-wrapper">
+                <span class="topic-line"></span>
+                <img src="assets/img/プロパティ1=デフォルト.png" alt="" class="topic-arrow">
+              </div>
+            </a>
+          
+          </div>
+
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Coffee Beans -->
+      <section class="coffee-beans">
+        <div class="coffee-beans-home">
+          <p>HOME > コーヒー豆</p>
+        </div>
+        <div class="coffee-beans-media">
+          <div class="coffee-beans active">
+            <picture>
+              <source media="(max-width: 767px)" srcset="assets/img/スタジオセッション-3971-1.png">
+              <img src="assets/img/スタジオセッション-3971.png" alt="Rokumei Coffee Slide 1">
+            </picture>
+            <div class="coffee-beans-text">
+              <p>ロクメイコーヒーでも何度か登場している、 中米・ニカラグアのコーヒーをロクメイコーヒー福袋に選びました。コーヒー栽培に非常に適した環境を持ったニカラグア。今回はCup Of Excellence受賞歴も持つサン・ホセ農園より、ジャバニカ種を お届けします。 気になるお味は、バランス良く、口当たりもなめらかな心地よさ。 ほっとひと心地つかせてくれるような味わいに仕上げています。今回は、そんなニカラグア サンホセ ジャバニカ パルプドナチュラルの魅力をご紹介していきます。</p>
+            </div>
+          </div>
+        </div>
       </section>
-  
+
+      <!-- 全20件 -->
+      <section class="all20-product">
+        <div class="all20-filter-bar"">
+          <div class="all20-title">
+            <p class="text-area">全20件</p>
+          </div>
+          <div class="all20-dropdown-filter">
+            <div class="all20-dropdown">
+              <p>おすすめ順</p>
+            </div>
+            <div class="all20-filter">
+              <p>Filter</p>
+            </div>
+          </div>
+        </div>
+        <div class="all20-items">
+          <!-- <div class="container"> -->
+            <header class="all20-items-title">
+              <p>フィルター：フルーティー</p>
+            </header>
+            <div class="product-grid">
+              <!-- Row 1 -->
+              <article class="product-card">
+                <div class="product-image-wrapper">
+                  <img src="assets/img/rcob-tobihino_pic_01 1.png" alt="Tobihino Blend" class="product-img">
+                </div>
+                <div class="product-meta">
+                  <p class="product-name">飛火野ブレンド</p>
+                  <p class="product-price">¥1,980 <span class="tax-note">(税込)</span></p>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-image-wrapper">
+                  <img src="assets/img/000000000664-01-l 1.png" alt="Brazil" class="product-img">
+                </div>
+                <div class="product-meta">
+                  <p class="product-name">【訳あり 40%OFF】クラフトコーヒー<br>ブーケブレンド<br>(母の日ラベル) 330ml 1本</p>
+                  <p class="product-price">¥648 <span class="tax-note">(税込)</span></p>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-image-wrapper">
+                  <img src="assets/img/000000000661-01-l 1.png" alt="Cold Brew" class="product-img">
+                </div>
+                <div class="product-meta">
+                  <p class="product-name">水出しコーヒーパックCOLD BREW<br>Refresh (コールドブリューリフレッシュ)<br>5パック (約17杯分)</p>
+                  <p class="product-price">¥1,180 <span class="tax-note">(税込)</span></p>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-image-wrapper">
+                  <img src="assets/img/528304648_18522991381050972_9199068920409036052_n 1.png" alt="Pudding"
+                    class="product-img">
+                </div>
+                <div class="product-meta">
+                  <p class="product-name">ファクトリーブレンド</p>
+                  <p class="product-price">¥1,780 <span class="tax-note">(税込)</span></p>
+                </div>
+              </article>
+    
+              <!-- Row 2 (Duplicate of Row 1) -->
+              <article class="product-card">
+                <div class="product-image-wrapper">
+                  <img src="assets/img/rcob-tobihino_pic_01 1.png" alt="Tobihino Blend" class="product-img">
+                </div>
+                <div class="product-meta">
+                  <p class="product-name">飛火野ブレンド</p>
+                  <p class="product-price">¥1,980 <span class="tax-note">(税込)</span></p>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-image-wrapper">
+                  <img src="assets/img/000000000664-01-l 1.png" alt="Craft Coffee" class="product-img">
+                </div>
+                <div class="product-meta">
+                  <p class="product-name">【訳あり 40%OFF】クラフトコーヒー<br>ブーケブレンド<br>(母の日ラベル) 330ml 1本</p>
+                  <p class="product-price">¥648 <span class="tax-note">(税込)</span></p>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-image-wrapper">
+                  <img src="assets/img/000000000661-01-l 1.png" alt="Cold Brew" class="product-img">
+                </div>
+                <div class="product-meta">
+                  <p class="product-name">水出しコーヒーパックCOLD BREW<br>Refresh (コールドブリューリフレッシュ)<br>5パック (約17杯分)</p>
+                  <p class="product-price">¥1,180 <span class="tax-note">(税込)</span></p>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-image-wrapper">
+                  <img src="assets/img/528304648_18522991381050972_9199068920409036052_n 1.png" alt="Pudding"
+                    class="product-img">
+                </div>
+                <div class="product-meta">
+                  <p class="product-name">ファクトリーブレンド</p>
+                  <p class="product-price">¥1,780 <span class="tax-note">(税込)</span></p>
+                </div>
+              </article>
+            </div>
+          <!-- </div> -->
+        </div>
+      </section>
+
     </main>
   
     <footer class="site-footer">
