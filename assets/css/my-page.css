@@ -1,0 +1,373 @@
+.my-page-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding-block: 30px 100px;
+}
+
+.my-page-content {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1028px;
+}
+.my-page-content .left {
+  width: 100%;
+  max-width: 396px;
+}
+.my-page-content .left .left-top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.my-page-content .left .left-top .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.my-page-content .left .left-top .user-info img {
+  width: 40px;
+  height: auto;
+}
+.my-page-content .left .left-top .user-info .user-info-txt .name {
+  font-size: 20px;
+  font-weight: 700;
+}
+.my-page-content .left .left-top .user-info .user-info-txt .rank {
+  font-size: 14px;
+  font-weight: 700;
+}
+.my-page-content .left .left-top a {
+  font-size: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+.my-page-content .left .left-top a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  transform: scaleX(0);
+  transform-origin: right top;
+  transition: transform 0.3s ease;
+}
+.my-page-content .left .left-top a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left top;
+}
+
+.my-page-content .left .left-mid {
+  width: 100%;
+}
+.my-page-content .left .left-mid .red-box {
+  width: 100%;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #a72813;
+}
+.my-page-content .left .left-mid .red-box .point-info {
+  position: absolute;
+  left: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f3f0ef;
+}
+
+.my-page-content .left .left-mid .red-box .point-info p:last-child {
+  font-size: 10px;
+  font-weight: 600;
+}
+.my-page-content .left .left-mid .red-box .point {
+  font-size: 42px;
+  font-weight: 700;
+  color: #f3f0ef;
+}
+.my-page-content .left .left-mid .red-box .point .main-point {
+  font-family: "Circular Std";
+}
+.my-page-content .left .left-mid .red-box .point span {
+  font-size: 27px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.my-page-content .left .left-mid .red-box .point-history {
+  font-size: 10px;
+  font-weight: 600;
+  color: #f3f0ef;
+  text-decoration: none;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+.my-page-content .left .left-mid .red-box .point-history::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #f3f0ef;
+  transform: scaleX(0);
+  transform-origin: right top;
+  transition: transform 0.3s ease;
+}
+.my-page-content .left .left-mid .red-box .point-history:hover::after {
+  transform: scaleX(1);
+  transform-origin: left top;
+}
+
+.my-page-content .left .left-mid .qr-code {
+  width: 100%;
+  background-color: #ffffff;
+  padding-block: 16px;
+}
+.my-page-content .left .left-mid .qr-code img {
+  width: 76px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.my-page-content .left .left-mid .logout {
+  font-size: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 5px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+.my-page-content .left .left-mid .logout::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  transform: scaleX(0);
+  transform-origin: right top;
+  transition: transform 0.3s ease;
+}
+.my-page-content .left .left-mid .logout:hover::after {
+  transform: scaleX(1);
+  transform-origin: left top;
+}
+
+.my-page-content .left .left-mid .point-info-sp {
+  font-size: 8px;
+  font-weight: 600;
+  color: #ded8d4;
+}
+.my-page-content .left .left-mid .point-info-sp.setting-item:nth-of-type(1) {
+  font-size: 10px;
+}
+
+.setting {
+  width: 100%;
+  margin-top: 54px;
+}
+.setting .setting-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.setting .setting-title img {
+  width: 23px;
+  height: auto;
+}
+.setting .setting-title p {
+  font-size: 20px;
+  font-weight: 700;
+}
+.setting .setting-list {
+  display: flex;
+  flex-direction: column;
+}
+.setting .setting-list .setting-item {
+  width: 100%;
+  padding-block: 10px;
+  border-bottom: 1px solid #000000;
+  font-size: 14px;
+  font-weight: 700;
+}
+.setting .setting-list .setting-item:nth-of-type(1) {
+  border-top: 1px solid #000000;
+  padding-block: 0;
+}
+
+.setting .setting-list .setting-item button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 10px;
+}
+.setting .setting-list .setting-item button p {
+  font-size: 14px;
+  font-weight: 700;
+}
+.setting .setting-list .setting-item button img {
+  width: 10px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.setting .setting-list .setting-item.active button img {
+  transform: rotate(180deg);
+}
+.setting-acd-content {
+  display: none;
+  flex-direction: column;
+  padding-block: 20px;
+  border-top: 1px solid #000000;
+  gap: 10px;
+}
+.setting-item.active .setting-acd-content {
+  display: flex;
+}
+.setting-acd-content a {
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.my-page-content .right {
+  width: 100%;
+  max-width: 602px;
+}
+
+.my-page-content .right .right-title {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 5px;
+}
+.my-page-content .right .right-title img {
+  width: 23px;
+  height: auto;
+}
+.my-page-content .right .right-title p {
+  font-size: 20px;
+  font-weight: 700;
+}
+.my-page-content .right .point-use-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.my-page-content .right .point-use-box .top-box {
+  display: flex;
+  gap: 10px;
+}
+.my-page-content .right .point-use-box .top-box .img-box {
+  width: 100%;
+  max-width: 296px;
+}
+.my-page-content .right .point-use-box .btm-box {
+  display: flex;
+  gap: 10px;
+}
+.my-page-content .right .point-use-box .btm-box .img-box {
+  width: 100%;
+  max-width: 239px;
+}
+.my-page-content .right .point-use-box .img-box img {
+  transition: opacity 0.3s ease;
+}
+.my-page-content .right .point-use-box .img-box:hover img {
+  opacity: 0.5;
+}
+
+@media (max-width: 1100px) {
+  .my-page-container {
+    padding-inline: 22px;
+  }
+  .my-page-content {
+    gap: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .my-page-container {
+    padding-block: 20px 100px;
+    gap: 30px;
+  }
+  .my-page-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 37px;
+  }
+  .my-page-content .left,
+  .my-page-content .right {
+    max-width: 600px;
+  }
+  .setting {
+    margin-top: 23px;
+    max-width: 600px;
+  }
+  .my-page-content .left .left-top {
+    margin-bottom: 40px;
+  }
+  .my-page-content .left .left-top .user-info img {
+    width: 31px;
+  }
+  .my-page-content .left .left-top .user-info .user-info-txt .name {
+    font-size: 18px;
+  }
+  .my-page-content .left .left-top .user-info .user-info-txt .rank {
+    font-size: 10px;
+  }
+  .my-page-content .left .left-mid .logout {
+    display: flex;
+    justify-content: end;
+  }
+  .my-page-content .right .right-title p,
+  .setting .setting-title p {
+    font-size: 18px;
+  }
+  .setting .setting-list .setting-item button p,
+  .setting .setting-list .setting-item {
+    font-size: 12px;
+  }
+  .my-page-content .left .left-mid .red-box .point {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .my-page-content .left .left-mid .red-box .point span {
+    font-size: 14px;
+  }
+  .my-page-content .left .left-mid .red-box {
+    height: 80px;
+  }
+  .my-page-content .left .left-mid .red-box .point-history {
+    font-size: 8px;
+  }
+  .my-page-content .right .point-use-box .top-box .img-box,
+  .my-page-content .right .point-use-box .btm-box .img-box {
+    max-width: 100%;
+  }
+  .my-page-content .right .point-use-box .btm-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
